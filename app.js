@@ -2,6 +2,8 @@ var koa = require('koa');
 var fs = require('fs');
 var app = module.exports = koa();
 var path = require('path');
+var url = require('url');
+var querystring = require('querystring');
 var extname = path.extname;
 
 app.use(function* () {
@@ -10,7 +12,13 @@ app.use(function* () {
 
     if (fstat.isFile()) {
         this.type = extname(path);
-        this.body = fs.createReadStream(path);
+        var query = url.parse(this.url).query;
+        var _callback = querystring.parse(query).callback;
+        var rs = fs.readFileSync(path,{
+            "encoding": "utf8"
+        });
+        var res = _callback+'('+JSON.stringify(rs)+')'
+        this.body = res;
     }
 });
 
