@@ -46,7 +46,7 @@ npm run start
         }
     }
 ```
-###identify
+###identify(识别JSON文件中指定的对象)
 --
 ######url
   ```
@@ -79,7 +79,7 @@ npm run start
       ]
   }
   ```
-###page
+###page(模拟分页效果,指定对象需是数组结构)
 --
 ######url
   ```
@@ -100,7 +100,7 @@ npm run start
       }
   }
   ```
-###name
+###name(获取指定对象内部的对应属性)
 --
 ######url
   ```
