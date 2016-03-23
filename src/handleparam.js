@@ -4,7 +4,6 @@ var querystring = require('querystring');
 
 exports.handleparam = function(txt,_url) {
     var query = querystring.parse(url.parse(_url).query);
-    console.log(query);
     var _callback = query.callback;
     var res = _callback + '(' + handleJson(txt,query) + ')'
     return res;

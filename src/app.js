@@ -3,8 +3,9 @@ var fs = require('fs');
 var app = module.exports = koa();
 var path = require('path');
 var hp = require('./handleparam.js');
-app.use(function* () {
 
+
+app.use(function* () {
     var path = `./data${this.path}.json`;
     var fstat = yield stat(path);
     if (fstat.isFile()) {
@@ -17,10 +18,8 @@ app.use(function* () {
 
 if (!module.parent) app.listen(3333);
 
-/**
- * thunkify stat
- */
 
+//读本地json
 function stat(file) {
     return function(done) {
         fs.stat(file, done);
