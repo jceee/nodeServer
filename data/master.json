@@ -1,0 +1,18 @@
+{
+    "master": {
+        "code": 0,
+        "data": {
+            "gameid": 123,
+            "gameName": "MC",
+            "data": [
+                {
+                    "uid": 123,
+                    "headerImage": "用户头像",
+                    "nickname": "L3've",
+                    "level": "1",
+                    "score": 123
+                }
+            ]
+        }
+    }
+}
