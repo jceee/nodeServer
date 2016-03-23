@@ -1,0 +1,27 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "api server for FE",
+  "main": "./src/app.js",
+  "dependencies": {
+    "argv": "0.0.2",
+    "koa": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "supervisor ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l3ve/nodeServer.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "L3've",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/l3ve/nodeServer/issues"
+  },
+  "homepage": "https://github.com/l3ve/nodeServer#readme"
+}
