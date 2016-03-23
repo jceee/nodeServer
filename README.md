@@ -4,8 +4,7 @@
 npm run start
 ```
 ###  How to 用
-
-
+---
 #### JSON放在`data`文件夹里,JSON文件名,即为请求名,例如:
   ```
  文件名  :  A.json
@@ -13,7 +12,8 @@ npm run start
   ```
  请求地址: localhost:3333/A
   ```
-#### 参数
+### 可用参数
+---
 ##### 假设我们有A.json如下
 ```
     {
