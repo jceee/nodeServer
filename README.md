@@ -17,3 +17,7 @@ node app
     * name
 
 #####identify
+
+
+
+>ps:因为内部使用koa,所以请使用较新版的node
