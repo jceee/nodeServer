@@ -5,6 +5,7 @@
   "main": "./src/app.js",
   "dependencies": {
     "argv": "0.0.2",
+    "co-body": "^4.0.0",
     "koa": "^1.2.0"
   },
   "devDependencies": {},
