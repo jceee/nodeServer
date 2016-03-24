@@ -13,7 +13,6 @@ function handleJson(json, query) {
     if (_identify) {
         _identify.map((idt) => {
             obj = obj[idt];
-            console.log(obj);
         })
     }
     if (_page && obj instanceof Array) {

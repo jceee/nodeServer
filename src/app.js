@@ -13,19 +13,16 @@ app.use(function* (next) {
     var rs = fs.readFileSync(_path, {
         "encoding": "utf8"
     });
-    console.log(query);
     this.body = hp.handleparam(rs, query);
 });
 
-app.use(function* () {
-    return (()=>{
-        if (this.method === 'GET') {
-            return this.query;
-        } else if (this.method === 'POST') {
-            // var _body = yield coBody(this);
-            // return _body;
-        }
-    })()
+app.use(function* (next) {
+    if (this.method === 'GET') {
+        return this.query;
+    } else if (this.method === 'POST') {
+        var _body = yield coBody(this);
+        return _body;
+    }
 });
 
 
