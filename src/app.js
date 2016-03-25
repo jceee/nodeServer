@@ -3,7 +3,7 @@ var fs = require('fs');
 var app = module.exports = koa();
 var path = require('path');
 var coBody = require('co-body');
-var hp = require('./handleparam.js');
+var hp = require('./handle_param.js');
 
 
 app.use(function* (next) {
