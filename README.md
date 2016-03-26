@@ -102,5 +102,5 @@ JSON放在`data`文件夹里,JSON文件名,即为请求名,例如:
 
 ### Tip:
 1. 因为内部使用koa,所以请使用较新版的node >= 0.11.9(以及--harmony),具体请参照-[koa](https://github.com/koajs/koa).
-2. 参数的顺序是固定的,先identify->page->name.
+2. 参数的执行顺序是固定的,先identify->page->name.但参数可缺省.
 3. 最后获取到的数据是JSON字符串.
