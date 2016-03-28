@@ -6,7 +6,8 @@
   "dependencies": {
     "argv": "0.0.2",
     "co-body": "^4.0.0",
-    "koa": "^1.2.0"
+    "koa": "^1.2.0",
+    "mockjs": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {

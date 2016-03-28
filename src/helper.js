@@ -7,7 +7,7 @@ exports.isUndefined = function(target) {
 }
 exports.errorMsg = function(txt) {
     var errorLog = {
-        msg:txt
+        msg: txt
     };
     return this.oTs(errorLog);
 }

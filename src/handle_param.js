@@ -1,8 +1,17 @@
 var helper = require('./helper.js');
+var mock = require('./mock.js');
 
-exports.handleparam = function(txt, query) {
+exports.handleparam = function(path, query) {
+    //mock变量有问题
+    var _target = require(`../data${path}.js`);
+    // var _target = {
+    //     a: 1
+    // };
     var _callback = query.callback;
-    var res = _callback + '(' + handleJson(txt, query) + ')';
+    var _data = handleJson(_target, query);
+    var _mockData = helper.oTs(mock.mockData(_data));
+    console.log(3);
+    var res = _callback + '(' + _mockData + ')';
     return res;
 };
 
@@ -10,7 +19,7 @@ function handleJson(json, query) {
     var _page = query.page ? query.page : false,
         _name = query.name ? query.name.split(',') : false,
         _identify = query.identify ? query.identify.split(',') : false,
-        obj = helper.sTo(json),
+        obj = json,
         ERROR = false;
     if (_identify) {
         _identify.map((idt) => {
@@ -29,8 +38,7 @@ function handleJson(json, query) {
     }
     if (_page && obj instanceof Array) {
         if (!obj[_page - 1]) {
-            var errorLog = { msg: '不存在第' + _page + '页' };
-            return helper.oTs(errorLog);
+            return helper.errorMsg('不存在第' + _page + '页');
         } else {
             obj = obj[_page - 1];
         }
@@ -54,7 +62,7 @@ function handleJson(json, query) {
             return ERROR;
         }
     }
-    return helper.oTs(obj);
+    return obj;
 }
 
 

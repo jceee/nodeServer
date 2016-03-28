@@ -1,19 +1,12 @@
 var koa = require('koa');
-var fs = require('fs');
 var app = module.exports = koa();
-var path = require('path');
 var coBody = require('co-body');
 var hp = require('./handle_param.js');
 
-
 app.use(function* (next) {
-    var _path = `./data${this.path}.json`;
     var query = yield next;
-    //读本地json
-    var rs = fs.readFileSync(_path, {
-        "encoding": "utf8"
-    });
-    this.body = hp.handleparam(rs, query);
+    var _hpdata = hp.handleparam(this.path, query);
+    this.body = _hpdata;
 });
 
 app.use(function* (next) {
