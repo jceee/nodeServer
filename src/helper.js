@@ -9,7 +9,7 @@ exports.errorMsg = function(txt) {
     var errorLog = {
         msg: txt
     };
-    return this.oTs(errorLog);
+    return errorLog;
 }
 
 exports.oTs = function(o) {

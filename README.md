@@ -5,17 +5,27 @@ npm run start
 ```
 ###  How to 用
 --
-JSON放在`data`文件夹里,JSON文件名,即为请求名,例如:
+数据放在`data`文件夹里,文件名,即为请求名,例如:
 
 ```
- 文件名  :  A.json
+ 文件名  :  A.js
 ```
 ```
  请求地址: localhost:3333/A
 ```
+数据文件的数据是采用mock来模拟的,所以最外层应该是一层mock包着(之后版本会抽离).传送门:[mock语法文档](https://github.com/nuysoft/Mock/wiki)
+```javascript
+    var Mock = require('mockjs');
+    var Random = Mock.Random;
+    exports.mock = Mock.mock(
+        {//各种mock语法
+            "master|3": []
+        }
+    );
+```
 ### 可用参数
 --
-##### 假设我们有A.json如下
+##### 假设我们有A.js的JSON数据如下
 ```
     {
       "master": [
@@ -41,7 +51,7 @@ JSON放在`data`文件夹里,JSON文件名,即为请求名,例如:
 ```
 --
 ####identify
-识别JSON文件中指定的对象
+识别数据文件中指定的对象
 
 ######url
   ```
@@ -104,3 +114,7 @@ JSON放在`data`文件夹里,JSON文件名,即为请求名,例如:
 1. 因为内部使用koa,所以请使用较新版的node >= 0.11.9(以及--harmony),具体请参照-[koa](https://github.com/koajs/koa).
 2. 参数的执行顺序是固定的,先identify->page->name.但参数可缺省.
 3. 最后获取到的数据是JSON字符串.
+
+
+###TODO
+* Mockjs的数据配置界面话,简化数据文件的编写

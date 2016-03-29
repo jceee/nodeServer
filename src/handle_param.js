@@ -1,17 +1,11 @@
 var helper = require('./helper.js');
-var mock = require('./mock.js');
+var Mock = require('mockjs');
 
 exports.handleparam = function(path, query) {
-    //mock变量有问题
     var _target = require(`../data${path}.js`);
-    // var _target = {
-    //     a: 1
-    // };
     var _callback = query.callback;
-    var _data = handleJson(_target, query);
-    var _mockData = helper.oTs(mock.mockData(_data));
-    console.log(3);
-    var res = _callback + '(' + _mockData + ')';
+    var _data = handleJson(_target.mock, query);
+    var res = _callback + '(' + helper.oTs(_data) + ')';
     return res;
 };
 
@@ -48,9 +42,9 @@ function handleJson(json, query) {
             var _bUndefined = helper.isUndefined(obj[name]);
             if (ERROR) {
                 return true;
-            } else if (_bUndefined || obj[name] instanceof Array) {
+            } else if (_bUndefined || obj instanceof Array) {
                 var log = '不存在name参数:';
-                if (obj[name] instanceof Array) {
+                if (obj instanceof Array) {
                     log = '数组不能含有属性名:';
                 }
                 ERROR = helper.errorMsg(log + name);
