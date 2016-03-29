@@ -11,7 +11,7 @@ exports.mock = Mock.mock(
                     "data|20": [
                         {
                             "uid|+1": 1,
-                            "headerImage": () => Random.image('250x250','#000000','txt'),
+                            "headerImage": () => Random.image('250x250','#000000','txt'), //箭头函数保证每个数组的值都是随机的
                             "nickname": () => Random.cname(),
                             "level": () => Random.integer(1, 10),
                             "score": () => Random.integer(0, 10000)
