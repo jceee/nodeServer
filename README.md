@@ -79,7 +79,7 @@ npm run start
   ```
 --
 ####page
-模拟分页效果,指定对象(identify)需是数组结构
+模拟分页效果,指定对象(identify)需是数组结构,当指定对象为数组,page缺省时,默认传第一页
 
 ######url
   ```
@@ -112,9 +112,8 @@ npm run start
 
 ### Tip:
 1. 因为内部使用koa,所以请使用较新版的node >= 0.11.9(以及--harmony),具体请参照-[koa](https://github.com/koajs/koa).
-2. 参数的执行顺序是固定的,先identify->page->name.但参数可缺省.
-3. 最后获取到的数据是JSON字符串.
+2. 参数的执行顺序是固定的,先identify->page->name.但参数可缺省.(最好带上identity)
 
 
 ###TODO
-* Mockjs的数据配置界面话,简化数据文件的编写
+* Mockjs的数据配置界面化,简化数据文件的编写
