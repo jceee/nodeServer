@@ -7,7 +7,7 @@ exports.mock = Mock.mock(
                 "code": 0,
                 "data": {
                     "gameid|+1": 1,
-                    "gameName": "MC",
+                    "gameName": () => Random.cname(2,8),
                     "data|20": [
                         {
                             "uid|+1": 1,

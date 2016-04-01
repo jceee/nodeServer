@@ -36,6 +36,8 @@ function handleJson(json, query) {
         } else {
             obj = obj[_page - 1];
         }
+    } else if (obj instanceof Array) {
+        obj = obj[0];
     }
     if (_name) {
         _name.map((name) => {
