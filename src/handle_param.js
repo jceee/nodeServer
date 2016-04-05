@@ -1,5 +1,4 @@
 var helper = require('./helper.js');
-var Mock = require('mockjs');
 
 exports.handleparam = function(path, query) {
     var _target = require(`../data${path}.js`);
