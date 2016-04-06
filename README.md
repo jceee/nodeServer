@@ -117,4 +117,3 @@ npm run start
 
 ###TODO
 * Mockjs的数据配置界面化,简化数据文件的编写
-* Mockjs的数据配置界面化,简化数据文件的编写
